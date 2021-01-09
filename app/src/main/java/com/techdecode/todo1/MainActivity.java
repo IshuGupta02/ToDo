@@ -2,57 +2,72 @@ package com.techdecode.todo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<String> items;
-    private ArrayAdapter<String> itemsAdapter;
-    private ListView lvItems;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.front);
 
-        lvItems = (ListView) findViewById(R.id.lvItems);
-        items = new ArrayList<String>();
-        itemsAdapter = new ArrayAdapter<String>(this,
-        android.R.layout.simple_list_item_1, items);
-        lvItems.setAdapter(itemsAdapter);
-        items.add("First Item");
-        items.add("Second Item");
-        setupListViewListener();
+        button1=(Button) findViewById(R.id.my_day);
+        button2=(Button) findViewById(R.id.tasks);
+        button3=(Button) findViewById(R.id.physics);
+        button4=(Button) findViewById(R.id.maths);
+
+        button1.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openactivity_myday();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openactivity_tasks();
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openactivity_phy();
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                openactivity_maths();
+            }
+        });
+
+
     }
 
-
-    private void setupListViewListener() {
-        lvItems.setOnItemLongClickListener(
-                new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> adapter,
-                                                   View item, int pos, long id) {
-                        // Remove the item within array at position
-                        items.remove(pos);
-                        // Refresh the adapter
-                        itemsAdapter.notifyDataSetChanged();
-                        // Return true consumes the long click event (marks it handled)
-                        return true;
-                    }
-
-                });
+    public void openactivity_myday(){
+        Intent intent=new Intent(this,myday.class);
+        startActivity(intent);
+    }
+    public void openactivity_tasks(){
+        Intent intent=new Intent(this,tasks.class);
+        startActivity(intent);
     }
 
-    public void onAddItem(View v) {
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
-        String itemText = etNewItem.getText().toString();
-        itemsAdapter.add(itemText);
-        etNewItem.setText("");
+    public void openactivity_phy(){
+        Intent intent=new Intent(this,physics.class);
+        startActivity(intent);
     }
+
+    public void openactivity_maths(){
+        Intent intent=new Intent(this,maths.class);
+        startActivity(intent);
+    }
+
 }

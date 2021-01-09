@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/tasks1"
+        android:layout_width="266dp"
+        android:layout_height="99dp"
+        android:text="Tasks"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="412dp" />
+
+    <Button
+        android:id="@+id/my_day1"
+        android:layout_width="275dp"
+        android:layout_height="102dp"
+        android:text="My Day"
+        tools:layout_editor_absoluteX="255dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="240dp"
+        android:layout_height="97dp"
+        android:text="General"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <Button
+        android:id="@+id/physics1"
+        android:layout_width="267dp"
+        android:layout_height="107dp"
+        android:text="Physics"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="659dp" />
+
+    <Button
+        android:id="@+id/maths1"
+        android:layout_width="272dp"
+        android:layout_height="99dp"
+        android:text="Mathematics"
+        tools:layout_editor_absoluteX="221dp"
+        tools:layout_editor_absoluteY="849dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="239dp"
+        android:layout_height="105dp"
+        android:text="Academics"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
